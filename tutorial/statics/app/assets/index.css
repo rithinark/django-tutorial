@@ -1,0 +1,19 @@
+body{
+    height:100vh;
+    background-color:rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+   
+}
+.heading{
+    text-align:center;
+}
+.container{
+    position:absolute;
+    left:50%;
+    top:45%;
+    transform:translate(-50%,-50%);
+}
+.form > *{
+    margin-top:10px;
+    margin-bottom:10px;
+}
