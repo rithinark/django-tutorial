@@ -7,6 +7,7 @@
     background-size:400%,400%;
     position:relative;
     animation:change 8s ease-in-out alternate infinite;
+    font-size:14px;
 }
 .registration{
     position: relative;
@@ -16,25 +17,31 @@
     margin-left: auto;
     margin-right: auto;
 }
-@media(min-width:768px){
+
+@media(min-width:567px){
     .registration{
         width:70%;
     }
 }
-@media(min-width:992px){
+@media(min-width:768px){
     .registration{
         width:60%;
+    }
+}
+@media(min-width:992px){
+    .registration{
+        width:50%;
     }
 }
 
 @media(min-width:1200px){
     .registration{
-        width:50%;
+        width:40%;
     }
 }
 @media(min-width:1400px){
     .registration{
-        width:40%;
+        width:35%;
     }
 }
 

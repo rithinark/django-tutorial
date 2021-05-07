@@ -16,8 +16,8 @@
     <section class="container-fluid background">
         <div class="registration box">
             <div class="regist-head py-3 mx-5">
-                <h3>Sign Up</h3>
-                <p><small>Want to sign up fill up the form</small></p>
+                <h1>Log In</h1>
+                <p><small>Welcome back</small></p>
             </div>
             <div class="regist-form mb-5 mx-5">
                 <form method="POST">
@@ -26,12 +26,17 @@
                         <div class="mb-3">
                             <label for={{form.id_for_label}} class="form-label">{{form.label_tag}}</label>
                             {{form}}
-                            <small>{{form.errors}}</small>
-                        </div>
+                        </div> 
                     {%endfor%}
+                    <div class="error-box" style="color:rgb(1, 133, 1)">
+                        <small>{{message}}</small>
+                    </div>
                     <div class="validation-box pb-3">
                         <button type="submit" class="btn btn-dark px-5" style="width:50%">Submit</button>  
-                        <small class="mt-2" style="float:right">existing user?  <a href="#">login</a></small>
+                        <a href="#"><small class="mt-2" style="float:right">forget password?</small></a>
+                        <div class="mt-2" style="text-align:center">
+                            New to the website?  <a style="text-decoration: none;" href="login"> signup</a>
+                        </div>
                     </div>
                 </form>
             </div>
