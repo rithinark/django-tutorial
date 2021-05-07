@@ -20,7 +20,15 @@
                 <p><small>Want to sign up fill up the form</small></p>
             </div>
             <div class="regist-form mb-5 mx-5">
-                <form>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="exampleInputFname" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="exampleInputFname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputLname" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="exampleInputLname">
+                    </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -40,29 +48,6 @@
 
     </section>
 
-
-
-
-
-
-<!----
-    <div class="container">
-        
-        <form class="form" method="POST">
-            {%csrf_token%}
-            <h1 class="heading">Login</h1>
-            {%for form in forms %}
-            <div>
-                {{form.label_tag}}<br>
-                {{form}}
-                <small>{{form.errors}}</small>
-            </div>
-
-            {%endfor%}
-            <button type="submit">login</button>
-        </form>
-    </div>
--->
 <!-- JavaScript Bundle with Popper -->
 
 <script src="{% static 'app\assets\index.js' %}"></script>
