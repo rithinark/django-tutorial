@@ -12,4 +12,5 @@ def index(request):
             return HttpResponse("success")
     else:
         form = Register()
+        print([type(fo) for fo in form])
     return render(request,'app\\index.html',{'forms':form})
