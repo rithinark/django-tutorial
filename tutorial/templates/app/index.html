@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet"  href="{% static 'app\assets\index.css' %}">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -16,23 +17,41 @@
     <section class="container-fluid background">
         <div class="registration box">
             <div class="regist-head py-3 mx-5">
-                <h3>Sign Up</h3>
-                <p><small>Want to sign up fill up the form</small></p>
+                {%if form_type == 'regist'%}
+                    <h3>Sign Up</h3>
+                    <p><small>Want to sign up fill up the form</small></p>
+                {%else%}
+                    <h2>Log In</h2>
+                    <p><small>Welcome back</small></p>
+                {%endif%}
             </div>
             <div class="regist-form mb-5 mx-5">
                 <form method="POST">
                     {%csrf_token%}
                     {%for form in forms%}
-                        <div class="mb-3">
-                            <label for={{form.id_for_label}} class="form-label">{{form.label_tag}}</label>
+                        <div class="form-floating mb-3">
                             {{form}}
+                            <label for={{form.id_for_label}} class="form-label">{{form.label_tag}}</label>
                             <small>{{form.errors}}</small>
                         </div>
                     {%endfor%}
-                    <div class="validation-box pb-3">
-                        <button type="submit" class="btn btn-dark px-5" style="width:50%">Submit</button>  
-                        <small class="mt-2" style="float:right">existing user?  <a href="#">login</a></small>
-                    </div>
+                    {%if form_type == 'regist'%}
+                        <div class="validation-box pb-3">
+                            <button type="submit" class="btn btn-dark" style="width:50%">Submit</button>  
+                            <small class="mt-2" style="float:right">existing user?  <a href="login">login</a></small>
+                        </div>
+                    {%else%}
+                        <div class="error-box" style="color:rgb(1, 133, 1)">
+                            <small>{{message}}</small>
+                        </div>
+                        <div class="validation-box pb-3">
+                            <button type="submit" class="btn btn-dark px-5" style="width:50%">Submit</button>  
+                            <a href="#"><small class="mt-2" style="float:right">forget password?</small></a>
+                            <div class="mt-2" style="text-align:center">
+                                New to the website?  <a style="text-decoration: none;" href="signup"> signup</a>
+                            </div>
+                        </div>
+                    {%endif%}
                 </form>
             </div>
 

@@ -6,7 +6,7 @@
     background: linear-gradient(-50deg, rgb(252, 114, 217) , rgb(157, 130, 253), rgb(252, 114, 217),rgb(255, 145, 0));
     background-size:400%,400%;
     position:relative;
-    animation:change 8s ease-in-out alternate infinite;
+    animation:change 10s ease-in-out alternate infinite;
     font-size:14px;
 }
 .registration{
