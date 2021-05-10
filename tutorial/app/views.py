@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
-from .forms import Register,Login
+from .forms.auth_forms import Register,Login
 from django.http import HttpResponse 
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
@@ -18,7 +18,7 @@ def Regist_page(request):
                 return redirect('home')
         else:
             form = Register()
-        return render(request,'app\\index.html',{'form_type':'regist','forms':form})
+        return render(request,'app/auth_templates/auth.html',{'form_type':'regist','forms':form})
 
 def Login_page(request):
     if request.user.is_authenticated:
@@ -40,7 +40,7 @@ def Login_page(request):
         else:
             form = Login()
             message=""
-        return render(request, 'app/index.html', {'form_type':'login','forms':form,'message':message})
+        return render(request, 'app/auth_templates/auth.html', {'form_type':'login','forms':form,'message':message})
 
 def Logout_page(request):
     logout(request)
